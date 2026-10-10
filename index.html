@@ -82,9 +82,36 @@
 <!-- Im creating a third section with a new chart -->
     <section>
         <div class="chart-description">
-            <h2>Section 2: Creating a new graph using vega-lite and FRED data</h2>
+            <h2>Section 3: Creating a new graph using vega-lite and FRED data</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                In this case, we downloaded the data in CSV format from FRED, changed the date format to YYYY-MM-DD, saved the file as a CSV, uploaded it to our GitHub repository, and copied the raw data URL into the Vega-Lite Editor. We also changed the variable names in the editor.
+            </p>
         </div>
         <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+<!-- Im creating a 4 section with a new chart -->
+    <section>
+        <div class="chart-description">
+            <h2>Section 4: Creating a new graph using vega-lite and its own data examples</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                In this case, we selected a graph from the examples menu on the Vega-Lite Editor website.
+                We experimented with different features, such as size, color, and axes. To link the data, I had to find the dataset (google it), download it from a third-person GitHub repository, upload it to my own GitHub repository, and copy the raw data URL into the Vega-Lite Editor code.
+            </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+<!-- Im creating a 5 section with a new chart -->
+    <section>
+        <div class="chart-description">
+            <h2>Section 5: Creating a more advanced graph using vega-lite and data from ons.gov.uk </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                In this case, I downloaded the CPI data from the ONS and created two new columns: YoY and a COVID-19 dummy variable. In the Vega-Lite Editor, after trying to adapt some existing examples, I asked ChatGPT to generate the Vega-Lite code for the graph I had in mind. I studied the code and understood most of it, except for some parts related to the COVID-19 vertical line, and then customized it.
+                As with some of the previous graphs, I had to upload the CSV file to GitHub using the correct date format and then use its raw data URL in Vega-Lite. Finally, I exported the Vega-Lite specification as a JSON file and uploaded it to my GitHub repository. 
+            </p>
+        </div>
+        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
     <!-- Do you want to add more sections? -->
@@ -106,9 +133,20 @@
                                                                                                                 // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
         vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
+        
         let figure_3_spec = "visualization.vl.json"; // 
                                                                                                                 // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
         vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+
+        
+        let figure_4_spec = "visualization4.vl.json"; // 
+                                                                                                                // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
+
+        
+        let figure_5_spec = "cpi_graph5.vl.json"; // 
+                                                                                                                // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
         // Do you want to add more graphs?
         // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
